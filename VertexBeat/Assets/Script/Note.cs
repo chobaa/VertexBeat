@@ -41,7 +41,7 @@ public class Note : MonoBehaviour
 
     public void NoteMove(){
         noteImage.position = Vector2.MoveTowards(noteImage.position, target[target_idx].position, bpm * noteSpeed * Time.deltaTime);
-        if(noteImage.position == target[target_idx].position){ // 아직 해결 못햇음
+        if(Vector2.Distance(noteImage.position, target[target_idx].position) < 0.01){
             target_idx += 1;
         }
         if(target_idx == currentShape){
