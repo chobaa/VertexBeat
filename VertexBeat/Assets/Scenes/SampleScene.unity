@@ -451,6 +451,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  beforeShape: 0
+  currentShape: 8
+  changeShape: 0
 --- !u!114 &224285497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +660,7 @@ GameObject:
   m_Component:
   - component: {fileID: 540203627}
   - component: {fileID: 540203628}
+  - component: {fileID: 540203629}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -694,6 +698,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteImage: {fileID: 0}
   bpm: 120
+--- !u!114 &540203629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540203626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a32c1a8f9a064d42aad4800fb86a5dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noteInfo: 0300000003000000040000000600000008000000
 --- !u!1 &572565693
 GameObject:
   m_ObjectHideFlags: 0

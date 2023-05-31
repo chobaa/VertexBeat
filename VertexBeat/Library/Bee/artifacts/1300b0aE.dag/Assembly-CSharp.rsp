@@ -347,6 +347,8 @@
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/UnityEngine.UI.ref.dll"
 "Assets/Script/Note.cs"
+"Assets/Script/NoteManager.cs"
+"Assets/Script/Parser.cs"
 "Assets/Script/ShapeManager.cs"
 "Assets/Script/TimingManager.cs"
 -langversion:9.0

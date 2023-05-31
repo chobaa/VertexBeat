@@ -15,7 +15,7 @@ public class Note : MonoBehaviour
         noteImage = GameObject.Find("NoteImage");
     }
 
-    public void NoteMove(GameObject[] target, ref int target_idx, int currentShape, ref bool isPassed)
+    public void NoteMove(GameObject[] target, ref int target_idx, int currentShape, ref bool isPassed, ref bool changeShape)
     {
         noteImage.transform.position = Vector2.MoveTowards(noteImage.transform.position, target[target_idx].transform.position, bpm * noteSpeed * Time.deltaTime);
         float distance = Vector2.Distance(noteImage.transform.position, target[target_idx].transform.position);
@@ -28,6 +28,7 @@ public class Note : MonoBehaviour
         {
             target_idx = 1;
             isPassed = true;
+            changeShape = true;
         }
     }
 }
