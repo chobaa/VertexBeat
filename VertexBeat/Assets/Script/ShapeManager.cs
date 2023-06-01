@@ -9,14 +9,14 @@ public class ShapeManager : MonoBehaviour
     TimingManager theTimingManager;
     NoteManager theNoteManager;
 
-    Image beforeImage; // 이전 도형의 이미지
-    Image currentImage; // 현재 다룰 도형의 이미지
+    Image beforeImage = null;
+    Image currentImage = null; // 현재 다룰 도형의 이미지
     [SerializeField] GameObject[] target; // note의 다음 목적지
     public int beforeShape = 0; // 이전 도형 저장
-    public int currentShape = 8; // 각 state별로 숫자를 부여 2 = line, 3 = triangle, 4 = square , 5 = pentagon, 6 = hexagon, 8 = octagon
+    public int currentShape = 0; // 각 state별로 숫자를 부여 2 = line, 3 = triangle, 4 = square , 5 = pentagon, 6 = hexagon, 8 = octagon
     int target_idx; // 현재 target의 index
     public bool changeShape; // 도형이 바뀌어야 할 때 true, 아니면 false
-    int noteInfo_idx = 0; // 노트가 바뀌는 순서
+    [SerializeField] int noteInfo_idx = 0; // 노트가 바뀌는 순서
 
     bool isChecked = true; // 노트가 클릭되면 true, isPassed가 활성화되어 노트가 지나가면 false
 
@@ -37,35 +37,12 @@ public class ShapeManager : MonoBehaviour
     {
         if (changeShape)
         { // 도형 변환시
-            beforeShape = currentShape;
-            currentShape = theNoteManager.noteInfo[noteInfo_idx++];
-            SetTargetTransform(currentShape);
-            // 애니메이션 추가, 노트의 변환 순서를 담을 배열 만들기 필요.
-            if(currentImage) { // 이전에 도형이 존재했다면 이미지 끄기
-                beforeImage = currentImage;
-                beforeImage.enabled = false;
-            }
-            currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
-            currentImage.enabled = true; // 새로 받아온 도형의 이미지 on
+            ChangingShape();
             changeShape = false;
         }
         else
         {
-            if (isPassed) // GameOver처리
-            {
-                if (Vector2.Distance(theNote.noteImage.transform.position, target[target_idx].transform.position) > 80f)
-                {
-                    if (isChecked)
-                    {
-                        isChecked = false;
-                        isPassed = false;
-                    }
-                    else
-                    {
-                        Debug.Log("GameOver");
-                    }
-                }
-            }
+            CheckPassNote();
             // 도형 변환을 안해도 되면 NoteMove 호출
             theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
             if (Input.GetKeyDown(KeyCode.Space))
@@ -106,5 +83,38 @@ public class ShapeManager : MonoBehaviour
         {
             target = GameObject.FindGameObjectsWithTag("Octagon");
         }
+    }
+
+    void ChangingShape(){
+        beforeShape = currentShape;
+        currentShape = theNoteManager.noteInfo[noteInfo_idx++];
+        SetTargetTransform(currentShape);
+        if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
+            beforeImage = currentImage;
+            currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
+            if(beforeImage != null) { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
+                beforeImage.enabled = false;
+                Debug.Log("Animation FadeOut");
+                }
+            // 현재 도형에 대한 Bigger 애니메이션 재생
+            Debug.Log("Animation Bigger");
+            currentImage.enabled = true;
+        }
+    }
+
+    void CheckPassNote(){
+        if (isPassed) // GameOver처리
+            {
+            if (Vector2.Distance(theNote.noteImage.transform.position, target[target_idx].transform.position) > 80f)
+            {
+                if (isChecked)
+                {
+                    isChecked = false;
+                    isPassed = false;
+                }
+                //else
+                   // Debug.Log("GameOver");
+            }
+         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TimingManager : MonoBehaviour
 {
 
-    [SerializeField] float[] timingBoxs; // 판정 체크
+    [SerializeField] float[] timingBoxs; // 판정 체크, 3 = perfect, 2 = good, 3 = pass, 0 = miss 판정으로 구성.
 
     void Start()
     {
