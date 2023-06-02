@@ -8,9 +8,16 @@ public class ShapeManager : MonoBehaviour
     Note theNote;
     TimingManager theTimingManager;
     NoteManager theNoteManager;
+    [SerializeField] Animator TriangleAnim = null;
+    [SerializeField] Animator SquareAnim = null;
+    [SerializeField] Animator HexagonAnim = null;
+    [SerializeField] Animator OctagonAnim = null;
 
-    Image beforeImage = null;
-    Image currentImage = null; // 현재 다룰 도형의 이미지
+    string FadeOut = "FadeOut";
+    string Bigger = "Bigger";
+
+    // Image beforeImage = null;
+    // Image currentImage = null; // 현재 다룰 도형의 이미지
     [SerializeField] GameObject[] target; // note의 다음 목적지
     public int beforeShape = 0; // 이전 도형 저장
     public int currentShape = 0; // 각 state별로 숫자를 부여 2 = line, 3 = triangle, 4 = square , 5 = pentagon, 6 = hexagon, 8 = octagon
@@ -90,15 +97,16 @@ public class ShapeManager : MonoBehaviour
         currentShape = theNoteManager.noteInfo[noteInfo_idx++];
         SetTargetTransform(currentShape);
         if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
-            beforeImage = currentImage;
-            currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
-            if(beforeImage != null) { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
-                beforeImage.enabled = false;
+            // currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
+            if(beforeShape != 0) { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
+                // beforeImage.enabled = false;
+                FadeOut_Animation(beforeShape);
                 Debug.Log("Animation FadeOut");
                 }
             // 현재 도형에 대한 Bigger 애니메이션 재생
             Debug.Log("Animation Bigger");
-            currentImage.enabled = true;
+            // currentImage.enabled = true;
+            Bigger_Animation(currentShape);
         }
     }
 
@@ -116,5 +124,35 @@ public class ShapeManager : MonoBehaviour
                    // Debug.Log("GameOver");
             }
          }
+    }
+
+    void FadeOut_Animation(int beforeShape){
+        if(beforeShape == 3){
+            TriangleAnim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 4){
+            SquareAnim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 6){
+            HexagonAnim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 8){
+            OctagonAnim.SetTrigger(FadeOut);
+        }
+    }
+
+    void Bigger_Animation(int currentShape){
+        if(currentShape == 3){
+            TriangleAnim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 4){
+            SquareAnim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 6){
+            HexagonAnim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 8){
+            OctagonAnim.SetTrigger(Bigger);
+        }
     }
 }

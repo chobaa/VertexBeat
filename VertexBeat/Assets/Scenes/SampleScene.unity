@@ -441,6 +441,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8031cacee587ec745b60a3efd196662d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TriangleAnim: {fileID: 2110444479}
+  SquareAnim: {fileID: 1980736882}
+  HexagonAnim: {fileID: 2093430844}
+  OctagonAnim: {fileID: 1642507009}
   target:
   - {fileID: 0}
   - {fileID: 0}
@@ -861,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a32c1a8f9a064d42aad4800fb86a5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteInfo: 0800000003000000040000000600000008000000
+  noteInfo: 0300000003000000040000000600000008000000
 --- !u!1 &572565693
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,6 +1604,7 @@ GameObject:
   - component: {fileID: 1642507006}
   - component: {fileID: 1642507008}
   - component: {fileID: 1642507007}
+  - component: {fileID: 1642507009}
   m_Layer: 5
   m_Name: Octagon
   m_TagString: Octagon
@@ -1666,6 +1671,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642507005}
   m_CullTransparentMesh: 1
+--- !u!95 &1642507009
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642507005}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dd43277d9a7a7cd4ebc38eace119831d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1749356461
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,6 +1883,7 @@ GameObject:
   - component: {fileID: 1980736879}
   - component: {fileID: 1980736881}
   - component: {fileID: 1980736880}
+  - component: {fileID: 1980736882}
   m_Layer: 5
   m_Name: Square
   m_TagString: Square
@@ -1923,6 +1950,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980736878}
   m_CullTransparentMesh: 1
+--- !u!95 &1980736882
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980736878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a7b80385a097f504e8407a9997b1a720, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2027169014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2054,7 @@ GameObject:
   - component: {fileID: 2093430841}
   - component: {fileID: 2093430843}
   - component: {fileID: 2093430842}
+  - component: {fileID: 2093430844}
   m_Layer: 5
   m_Name: Hexagon
   m_TagString: Hexagon
@@ -2072,6 +2121,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093430840}
   m_CullTransparentMesh: 1
+--- !u!95 &2093430844
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093430840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e7a6ae605adf42046a6194931bc8e51c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2110444475
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2228,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110444475}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: eca8fb14216ea8c4c9b103424086ea8d, type: 2}
   m_CullingMode: 0
