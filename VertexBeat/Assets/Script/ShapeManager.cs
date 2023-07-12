@@ -13,6 +13,7 @@ public class ShapeManager : MonoBehaviour
     [SerializeField] Animator SquareAnim = null;
     [SerializeField] Animator HexagonAnim = null;
     [SerializeField] Animator OctagonAnim = null;
+    [SerializeField] AudioSource audioSource;
 
     string FadeOut = "FadeOut";
     string Bigger = "Bigger";
@@ -36,6 +37,7 @@ public class ShapeManager : MonoBehaviour
         theNote = FindObjectOfType<Note>();
         theTimingManager = FindObjectOfType<TimingManager>();
         theNoteData = FindObjectOfType<NoteData>();
+        audioSource = FindObjectOfType<AudioSource>();
         changeShape = true; // 처음에는 도형이 정해져있지 않으므로 도형 가져오기
         target_idx = 1; // 처음 위치는 도형의 맨 윗 꼭짓점으로 설정
     }
@@ -52,6 +54,7 @@ public class ShapeManager : MonoBehaviour
         {
             CheckPassNote();
             // 도형 변환을 안해도 되면 NoteMove 호출
+            audioSource.Play();
             theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
             if (Input.GetKeyDown(KeyCode.Space))
             {
