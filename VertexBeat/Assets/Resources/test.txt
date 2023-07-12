@@ -1,0 +1,12 @@
+[Description]
+#Title Splendid Circus
+#Artist Smilegate RPG
+
+[Audio]
+#BPM 148
+#Offset 2228
+#Signature 4/4
+
+[NoteData]
+#000:3468863
+#007:3688663

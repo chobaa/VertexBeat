@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class ShapeManager : MonoBehaviour
 {
     Note theNote;
     TimingManager theTimingManager;
-    NoteManager theNoteManager;
+    NoteData theNoteData;
     [SerializeField] Animator TriangleAnim = null;
     [SerializeField] Animator SquareAnim = null;
     [SerializeField] Animator HexagonAnim = null;
@@ -23,7 +24,7 @@ public class ShapeManager : MonoBehaviour
     public int currentShape = 0; // 각 state별로 숫자를 부여 2 = line, 3 = triangle, 4 = square , 5 = pentagon, 6 = hexagon, 8 = octagon
     int target_idx; // 현재 target의 index
     public bool changeShape; // 도형이 바뀌어야 할 때 true, 아니면 false
-    [SerializeField] int noteInfo_idx = 0; // 노트가 바뀌는 순서
+    [SerializeField] int noteData_idx = 0; // 노트가 바뀌는 순서
 
     bool isChecked = true; // 노트가 클릭되면 true, isPassed가 활성화되어 노트가 지나가면 false
 
@@ -34,7 +35,7 @@ public class ShapeManager : MonoBehaviour
     {
         theNote = FindObjectOfType<Note>();
         theTimingManager = FindObjectOfType<TimingManager>();
-        theNoteManager = FindObjectOfType<NoteManager>();
+        theNoteData = FindObjectOfType<NoteData>();
         changeShape = true; // 처음에는 도형이 정해져있지 않으므로 도형 가져오기
         target_idx = 1; // 처음 위치는 도형의 맨 윗 꼭짓점으로 설정
     }
@@ -73,28 +74,36 @@ public class ShapeManager : MonoBehaviour
         else if (currentShape == 3)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle");
+            theNote.noteSpeed = 9;
         }
         else if (currentShape == 4)
         {
             target = GameObject.FindGameObjectsWithTag("Square");
+            theNote.noteSpeed = 12;
         }
         else if (currentShape == 5)
         {
             target = GameObject.FindGameObjectsWithTag("Pentagon");
+            theNote.noteSpeed = 15;
         }
         else if (currentShape == 6)
         {
             target = GameObject.FindGameObjectsWithTag("Hexagon");
+            theNote.noteSpeed = 18;
         }
         else if (currentShape == 8)
         {
             target = GameObject.FindGameObjectsWithTag("Octagon");
+            theNote.noteSpeed = 24;
         }
     }
 
     void ChangingShape(){
         beforeShape = currentShape;
-        currentShape = theNoteManager.noteInfo[noteInfo_idx++];
+        List<Tuple<int,float>> noteData = theNoteData.getNoteDataList();
+        currentShape = noteData[noteData_idx++].Item1;
+        Debug.Log(currentShape);
+        Debug.Log(noteData_idx);
         SetTargetTransform(currentShape);
         if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
             // currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
@@ -110,8 +119,8 @@ public class ShapeManager : MonoBehaviour
         }
     }
 
-    void CheckPassNote(){
-        if (isPassed) // GameOver처리
+    bool CheckPassNote(){
+        if (isPassed) // GameOver처리, 박자 별 Animation 실행
             {
             if (Vector2.Distance(theNote.noteImage.transform.position, target[target_idx].transform.position) > 80f)
             {
@@ -119,11 +128,14 @@ public class ShapeManager : MonoBehaviour
                 {
                     isChecked = false;
                     isPassed = false;
+                    return true;
                 }
-                //else
-                   // Debug.Log("GameOver");
+                else
+                   //Debug.Log("GameOver");
+                   return false;
             }
          }
+         return false;
     }
 
     void FadeOut_Animation(int beforeShape){
@@ -155,4 +167,19 @@ public class ShapeManager : MonoBehaviour
             OctagonAnim.SetTrigger(Bigger);
         }
     }
+
+    /*void NoteClick_Animation(int beforeShape){
+        if(beforeShape == 3){
+            TriangleAnim.SetTrigger(Clicked);
+        }
+        else if(beforeShape == 4){
+            SquareAnim.SetTrigger(Clicked);
+        }
+        else if(beforeShape == 6){
+            HexagonAnim.SetTrigger(Clicked);
+        }
+        else if(beforeShape == 8){
+            OctagonAnim.SetTrigger(Clicked);
+        }
+    }*/
 }

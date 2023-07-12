@@ -6,8 +6,8 @@ public class Note : MonoBehaviour
 {
     ShapeManager theShapeManager;
     [SerializeField] public GameObject noteImage = null;
-    float noteSpeed = 5f; // 노트의 기본 이동속도
-    [SerializeField] int bpm = 1; // 노래의 bpm
+    public float noteSpeed = 5f; // 노트의 기본 이동속도
+    public int bpm = 1; // 노래의 bpm
     [SerializeField] bool isDelayed = false; // distance 측정 확인 변수 couroutine 사용.
 
     void Start()

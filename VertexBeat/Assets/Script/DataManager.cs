@@ -3,122 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 using System;
-using UnityEngine.Networking;
-/*
-public class DataManager : MonoBehaviour
-{
-    static DataManager instance;
-    public static DataManager Instance{
-        get{
-            if(instance == null)
-                instance = new DataManager();
-                return instance;
-        }
+
+public class DataManager : MonoBehaviour{
+    public SongData songData;
+
+    public SongData getSongData() {
+        return songData;
     }
-
-    enum Step{
-        Description,
-        Audio,
-        Note,
-    }
-    Step currentStep = Step.Description;
-
-    public Sheet sheet;
-    string basePath = $"{Application.dataPath}/Sheet";
-
-    public AudioClip clip;
     
-    public IEnumerator DataParse(string title){
-        sheet = new Sheet();
+    void Awake(){
+        SongDataLoad("test");
+    }
+
+    public void SongDataLoad(string name){
+        string FilePath = $"{Application.dataPath}/Resources";
         string readLine = string.Empty;
-
-        using(StreamReader sr = new StreamReader($"{basePath}/{title}/{title}.sheet")){
+        NoteData theNoteData = gameObject.AddComponent<NoteData>();
+        StreamReader sr = new StreamReader($"{FilePath}/{name}.txt");
+        while(!sr.EndOfStream){
             readLine = sr.ReadLine();
-
-            while(readLine != null){
-                if(readLine.StartsWith("[Description]")){
-                    currentStep = Step.Description;
-                    readLine = sr.ReadLine();
+            if(readLine.StartsWith('#')){
+                string[] data = readLine.Split(" ");
+                if(data[0] == "#Title"){
+                    Debug.Log(data[1]);
+                    Debug.Log(data[2]);
                 }
-                else if(readLine.StartsWith("[Audio]")){
-                    currentStep = Step.Audio;
-                    readLine = sr.ReadLine();
+                else if(data[0].IndexOf(":") == 4){ // 데이터 섹션 읽기
+                    int time = 0;
+                    Int32.TryParse(data[0].Trim().Substring(1,3), out time);
+                    string noteStr = data[0].Trim().Substring(5);
+                    List<Tuple<int, float>> noteDataList = getNoteDataOfStr(time, noteStr);
+                    theNoteData.setNoteDataList(noteDataList);
                 }
-                else if(readLine.StartsWith("[Note]")){
-                    currentStep = Step.Note;
-                    readLine = sr.ReadLine();
-                }
-                if(currentStep == Step.Description){
-                    if (readLine.StartsWith("BPM"))
-                        sheet.bpm = int.Parse(readLine.Split(':')[1].Trim());
-                    else if (readLine.StartsWith("Offset"))
-                        sheet.offset = int.Parse(readLine.Split(':')[1].Trim());
-                    else if (readLine.StartsWith("Signature"))
-                    {
-                        string[] s = readLine.Split(':');
-                        s = s[1].Split('/');
-                        int[] sign = { int.Parse(s[0].Trim()), int.Parse(s[1].Trim()) };
-                        sheet.signature = sign;
-                    }
-                }
-                else if (currentStep == Step.Audio)
-                {
-                    if (readLine.StartsWith("BPM"))
-                        sheet.bpm = int.Parse(readLine.Split(':')[1].Trim());
-                    else if (readLine.StartsWith("Offset"))
-                        sheet.offset = int.Parse(readLine.Split(':')[1].Trim());
-                    else if (readLine.StartsWith("Signature"))
-                    {
-                        string[] s = readLine.Split(':');
-                        s = s[1].Split('/');
-                        int[] sign = { int.Parse(s[0].Trim()), int.Parse(s[1].Trim()) };
-                        sheet.signature = sign;
-                    }
-                }
-                else if (currentStep == Step.Note)
-                {
-                    if (string.IsNullOrEmpty(readLine))
-                        break;
-
-                    string[] s = readLine.Split(',');
-                    int time = int.Parse(s[0].Trim());
-                    int type = int.Parse(s[1].Trim());
-                    int line = int.Parse(s[2].Trim());
-                    int tail = -1;
-                    if (s.Length > 3)
-                        tail = int.Parse(readLine.Split(',')[3].Trim());
-                    sheet.notes.Add(new Note(time, type, line, tail));
-                }
-
-                readLine = sr.ReadLine();
             }
         }
-
-        yield return IEGetClip(title);
-        yield return IEGetImg(title);
-
-        sheet.clip = clip;
-        sheet.img = img;
     }
 
-    public IEnumerator IEGetClip(string title)
-    {
-        using (UnityWebRequest request = UnityWebRequestMultimedia.GetAudioClip($"{basePath}/{title}/{title}.mp3", AudioType.MPEG))
-        {
-            yield return request.SendWebRequest();
-            clip = DownloadHandlerAudioClip.GetContent(request);
-            clip.name = title;
+    private List<Tuple<int, float>> getNoteDataOfStr(int time, string str){
+        string tempStr = str.Trim(); // note의 정보를 갖고있는 string
+        List<Tuple<int, float>> noteDataList = new List<Tuple<int, float>>();
+
+        int totalHitCount = 0;
+        int totalFigureCount = 0;
+        int key = 0;
+        for(int i=0; i<tempStr.Length; i++){ // 각 note를 읽어들이고
+            key = tempStr[i] - '0';
+            totalHitCount += key; // 각 도형의 꼭짓점의 갯수 (타격판정)
+            totalFigureCount++; // 전체 도형의 갯수
+
+            Tuple<int,float> noteData = new Tuple<int,float>(key, (float)time);
+            // 시간은 일단 각 도형마다 1초로 계산했지만 이후 bpm 추가해서 세부 조정 필요.
+            //songData.totalPlayTime = time;
+            noteDataList.Add(noteData);
+            //songData.totalNoteCount = totalHitCount;
         }
-    }
 
-    public IEnumerator IEGetImg(string title)
-    {
-        using (UnityWebRequest request = UnityWebRequestTexture.GetTexture($"{basePath}/{title}/{title}.jpg"))
-        {
-            yield return request.SendWebRequest();
-            Texture2D t = DownloadHandlerTexture.GetContent(request);
-            img = Sprite.Create(t, new Rect(0, 0, t.width, t.height), new Vector2(0.5f, 0.5f));
-            img.name = title;
-        }
+        return noteDataList;
     }
-}*/
+}
