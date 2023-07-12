@@ -1,4 +1,7 @@
+Library\Bee\artifacts\mvdfrm\Unity.2D.Sprite.Editor.ref.dll_6C8185F9E5AE014E.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.EditorCoroutines.Editor.ref.dll_1315E0A407C70415.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.InternalAPIEditorBridge.003.ref.dll_17B97678105D6BFA.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.InternalAPIEngineBridge.003.ref.dll_0A342F22756C533F.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Performance.Profile-Analyzer.Editor.ref.dll_8B44F821019897E5.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.PlasticSCM.Editor.ref.dll_A558B9E65539D7D0.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Rider.Editor.ref.dll_DA88E6A3E9EB6155.mvfrm
@@ -10,6 +13,8 @@ Library\Bee\artifacts\mvdfrm\Unity.TextMeshPro.ref.dll_02929A3ECA791895.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Timeline.Editor.ref.dll_17F688653313AA4C.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Timeline.ref.dll_16F8EA6B67022FB5.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VSCode.Editor.ref.dll_AE868214B5ED3D13.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VectorGraphics.Editor.ref.dll_EB093865664EE84F.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VectorGraphics.ref.dll_8D39622004222D82.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Core.Editor.ref.dll_514B12BC0D1D8DB7.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Core.ref.dll_BF8650D11F8E519A.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Flow.Editor.ref.dll_CE7BFB6B1BFC18F8.mvfrm
@@ -102,4 +107,4 @@ Library\Bee\artifacts\mvdfrm\UnityEngine.WindModule.dll_4618CE35FF0152D2.mvfrm
 Library\Bee\artifacts\mvdfrm\UnityEngine.XRModule.dll_F7194C9FA1A15454.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Android.Gradle.dll_D00A83E1A99C5226.mvfrm
 Library\Bee\artifacts\mvdfrm\Unity.Android.Types.dll_544EEEFC6DBCF176.mvfrm
-Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_774F145CB8F913A8.mvfrm
+Library\Bee\artifacts\mvdfrm\Unity.VisualScripting.Antlr3.Runtime.dll_1A840F4AA28D8BC8.mvfrm
