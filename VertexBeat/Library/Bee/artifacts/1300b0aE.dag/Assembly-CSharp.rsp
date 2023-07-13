@@ -321,8 +321,8 @@
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Gradle.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer/Unity.Android.Types.dll"
--r:"C:/Users/chobaa/Documents/GitHub/VertexBeat/VertexBeat/Library/PackageCache/com.unity.testtools.codecoverage@1.2.3/lib/ReportGenerator/ReportGeneratorMerged.dll"
--r:"C:/Users/chobaa/Documents/GitHub/VertexBeat/VertexBeat/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
+-r:"C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat/Library/PackageCache/com.unity.testtools.codecoverage@1.2.3/lib/ReportGenerator/ReportGeneratorMerged.dll"
+-r:"C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat/Library/PackageCache/com.unity.visualscripting@1.8.0/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.2D.Sprite.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.EditorCoroutines.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1300b0aE.dag/Unity.InternalAPIEditorBridge.003.ref.dll"
@@ -355,11 +355,10 @@
 "Assets/DataModel/SongData.cs"
 "Assets/Script/AudioManager.cs"
 "Assets/Script/DataManager.cs"
-"Assets/Script/Editor.cs"
 "Assets/Script/Note.cs"
 "Assets/Script/NoteManager.cs"
+"Assets/Script/ProgressBar.cs"
 "Assets/Script/ShapeManager.cs"
-"Assets/Script/Sheet.cs"
 "Assets/Script/TimingManager.cs"
 -langversion:9.0
 

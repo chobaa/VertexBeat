@@ -9,11 +9,11 @@ public class ShapeManager : MonoBehaviour
     Note theNote;
     TimingManager theTimingManager;
     NoteData theNoteData;
+    AudioManager theAudioManager;
     [SerializeField] Animator TriangleAnim = null;
     [SerializeField] Animator SquareAnim = null;
     [SerializeField] Animator HexagonAnim = null;
     [SerializeField] Animator OctagonAnim = null;
-    [SerializeField] AudioSource audioSource;
 
     string FadeOut = "FadeOut";
     string Bigger = "Bigger";
@@ -37,16 +37,15 @@ public class ShapeManager : MonoBehaviour
         theNote = FindObjectOfType<Note>();
         theTimingManager = FindObjectOfType<TimingManager>();
         theNoteData = FindObjectOfType<NoteData>();
-        audioSource = FindObjectOfType<AudioSource>();
+        theAudioManager = FindObjectOfType<AudioManager>();
         changeShape = true; // 처음에는 도형이 정해져있지 않으므로 도형 가져오기
         target_idx = 1; // 처음 위치는 도형의 맨 윗 꼭짓점으로 설정
-        audioSource.Play();
-        Debug.Log("Play");
     }
 
     // Update is called once per frame
     void Update()
     {
+        theAudioManager.setStartTrue(); // 노래 재생 bool
         if (changeShape)
         { // 도형 변환시
             ChangingShape();

@@ -4,85 +4,34 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    static AudioManager instance;
-    public static AudioManager Instance{
-        get{
-            return instance;
-        }
-    }
-
     public AudioSource audioSource;
+    public bool isStart;
 
-    public float Length{
-        get{
-            float len = 0f;
-            if(audioSource.clip != null)
-                len = audioSource.clip.length;
-                return len;
-        }
-    }
-    public float progressTime{
-        get{
-            float time = 0f;
-            if(audioSource.clip != null){
-                time = audioSource.time;
-            }
-            return time;
-        }
-        set{
-            if(audioSource.clip != null){
-                audioSource.time = value;
-            }
-        }
-    }
-
-    public enum State{
-        Playing,
-        Paused,
-        Unpaused,
-        Stop,
-    }
-    public State state = State.Stop;
-
-    void Awake(){
-        if(instance == null)
-            instance = this;
-        
+    void Start(){
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void Play(){
-        state = State.Playing;
-        audioSource.Play();
+    void Update(){
+        StartCoroutine(AudioPlay());
     }
 
-    public void Pause()
+    IEnumerator AudioPlay(){
+        if(isStart){
+            audioSource.Play();
+            yield return null;
+        }
+    }
+    //get/set
+    public bool getStart()
     {
-        state = State.Paused;
-        audioSource.Pause();
+        return isStart;
     }
-
-    public void UnPause()
+    public void setStartTrue()
     {
-        state = State.Unpaused;
-        audioSource.UnPause();
+        this.isStart = true;
     }
-
-    public void Stop()
+    public void setStartFalse()
     {
-        state = State.Stop;
-        audioSource.Stop();
-    }
-
-    public void MovePosition(float time){
-        float currentTime = audioSource.time;
-
-        currentTime += time;
-        currentTime = Mathf.Clamp(currentTime, 0f, audioSource.clip.length - 0.0001f);
-
-        audioSource.time = currentTime;
-    }
-    public bool IsPlaying(){
-        return audioSource.isPlaying;
+        this.isStart = false;
     }
 }
