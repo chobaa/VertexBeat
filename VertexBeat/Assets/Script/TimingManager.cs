@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class TimingManager : MonoBehaviour
 {
 
     [SerializeField] float[] timingBoxs; // 판정 체크, 3 = perfect, 2 = good, 3 = pass, 0 = miss 판정으로 구성.
-
+    [SerializeField] TextMeshProUGUI scoretext;
+    public int score = 0;
     void Start()
     {
         timingBoxs[3] = 10f;
         timingBoxs[2] = 20f;
         timingBoxs[1] = 60f;
         timingBoxs[0] = 120f;
+        scoretext = FindObjectOfType<TextMeshProUGUI>();
+    }
+
+    void Update(){
+        scoretext.text = $"Score : {score}";
     }
 
     public bool CheckTiming(GameObject before, GameObject current, GameObject next)
@@ -24,11 +31,10 @@ public class TimingManager : MonoBehaviour
         {
             if (distance1 < timingBoxs[i])
             {
-                Debug.Log(i * 10);
+                score += i * 10;
                 return true;
             }
         }
-        Debug.Log("Miss");
         return false;
     }
 }

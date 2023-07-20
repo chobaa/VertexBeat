@@ -4,12 +4,16 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Triangle
-  - Square
   - Line
-  - Pentagon
-  - Hexagon
-  - Octagon
+  - Triangle_112
+  - Triangle_121
+  - Triangle_211
+  - Triangle_05152
+  - Square_1111
+  - Square_051511
+  - Pentagon_1105105
+  - Hexagon_1105050505
+  - Octagon_0505050505050505
   layers:
   - Default
   - TransparentFX

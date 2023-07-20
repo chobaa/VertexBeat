@@ -5,7 +5,7 @@ using UnityEngine;
 public class Note : MonoBehaviour
 {
     ShapeManager theShapeManager;
-    [SerializeField] public GameObject noteImage = null;
+    [SerializeField] public GameObject Cursor = null;
     public float noteSpeed = 5f; // 노트의 기본 이동속도
     public int bpm = 1; // 노래의 bpm
     [SerializeField] bool isDelayed = false; // distance 측정 확인 변수 couroutine 사용.
@@ -13,13 +13,13 @@ public class Note : MonoBehaviour
     void Start()
     {
         theShapeManager = FindObjectOfType<ShapeManager>();
-        noteImage = GameObject.Find("NoteImage");
+        Cursor = GameObject.Find("Cursor");
     }
 
     public void NoteMove(GameObject[] target, ref int target_idx, int currentShape, ref bool isPassed, ref bool changeShape)
     {
-        noteImage.transform.position = Vector2.MoveTowards(noteImage.transform.position, target[target_idx].transform.position, bpm * noteSpeed * Time.deltaTime);
-        float distance = Vector2.Distance(noteImage.transform.position, target[target_idx].transform.position);
+        Cursor.transform.position = Vector2.MoveTowards(Cursor.transform.position, target[target_idx].transform.position, bpm * noteSpeed * Time.deltaTime);
+        float distance = Vector2.Distance(Cursor.transform.position, target[target_idx].transform.position);
         if (distance < 0.01 && !isDelayed)
         {
             target_idx += 1;
@@ -27,7 +27,7 @@ public class Note : MonoBehaviour
             isDelayed = true;
             StartCoroutine(isDelay());
             }
-        if (target_idx == currentShape + 1)
+        if (target_idx == currentShape/10 + 1)
         {
             target_idx = 1;
             isPassed = true;

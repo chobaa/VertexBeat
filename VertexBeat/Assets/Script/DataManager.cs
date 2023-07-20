@@ -46,9 +46,10 @@ public class DataManager : MonoBehaviour{
         int totalHitCount = 0;
         int totalFigureCount = 0;
         int key = 0;
-        for(int i=0; i<tempStr.Length; i++){ // 각 note를 읽어들이고
-            key = tempStr[i] - '0';
-            totalHitCount += key; // 각 도형의 꼭짓점의 갯수 (타격판정)
+        for(int i=0; i<tempStr.Length; i += 2){ // 각 note를 읽어들이고
+            key = (tempStr[i] - '0') * 10;
+            key += tempStr[i+1] - '0';
+            totalHitCount += key/10; // 각 도형의 꼭짓점의 갯수 (타격판정)
             totalFigureCount++; // 전체 도형의 갯수
 
             Tuple<int,float> noteData = new Tuple<int,float>(key, (float)time);

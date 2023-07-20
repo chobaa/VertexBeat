@@ -10,10 +10,18 @@ public class ShapeManager : MonoBehaviour
     TimingManager theTimingManager;
     NoteData theNoteData;
     AudioManager theAudioManager;
-    [SerializeField] Animator TriangleAnim = null;
-    [SerializeField] Animator SquareAnim = null;
-    [SerializeField] Animator HexagonAnim = null;
-    [SerializeField] Animator OctagonAnim = null;
+    //Triangle
+    [SerializeField] Animator Triangle_121_Anim = null;
+    [SerializeField] Animator Triangle_112_Anim = null;
+    [SerializeField] Animator Triangle_211_Anim = null;
+    [SerializeField] Animator Triangle_05152_Anim = null;
+    //Square
+    [SerializeField] Animator Square_1111_Anim = null;
+    [SerializeField] Animator Square_051511_Anim = null;
+    //Pentagon
+    [SerializeField] Animator Pentagon_1105105_Anim = null;
+    [SerializeField] Animator Hexagon_1105050505_Anim = null;
+    [SerializeField] Animator Octagon_0505050505050505_Anim = null;
 
     string FadeOut = "FadeOut";
     string Bigger = "Bigger";
@@ -60,44 +68,60 @@ public class ShapeManager : MonoBehaviour
             {
                 if (target_idx == 0 || target_idx == 1)
                 {
-                    isChecked = theTimingManager.CheckTiming(target[1], theNote.noteImage, target[2]);
+                    isChecked = theTimingManager.CheckTiming(target[1], theNote.Cursor, target[2]);
                 }
                 else
-                    isChecked = theTimingManager.CheckTiming(target[target_idx - 1], theNote.noteImage, target[target_idx]);
+                    isChecked = theTimingManager.CheckTiming(target[target_idx - 1], theNote.Cursor, target[target_idx]);
             }
         }
     }
 
     void SetTargetTransform(int currentShape)
     { // 도형 변환 함수
-        if (currentShape == 2)
+        if (currentShape == 31)
         {
-            target = GameObject.FindGameObjectsWithTag("Line");
-        }
-        else if (currentShape == 3)
-        {
-            target = GameObject.FindGameObjectsWithTag("Triangle");
+            target = GameObject.FindGameObjectsWithTag("Triangle_112");
             theNote.noteSpeed = 9;
         }
-        else if (currentShape == 4)
+        else if (currentShape == 32)
         {
-            target = GameObject.FindGameObjectsWithTag("Square");
-            theNote.noteSpeed = 12;
+            target = GameObject.FindGameObjectsWithTag("Triangle_121");
+            theNote.noteSpeed = 9;
         }
-        else if (currentShape == 5)
+        else if (currentShape == 33)
         {
-            target = GameObject.FindGameObjectsWithTag("Pentagon");
-            theNote.noteSpeed = 15;
+            target = GameObject.FindGameObjectsWithTag("Triangle_211");
+            theNote.noteSpeed = 9;
         }
-        else if (currentShape == 6)
+        else if (currentShape == 34)
         {
-            target = GameObject.FindGameObjectsWithTag("Hexagon");
-            theNote.noteSpeed = 18;
+            target = GameObject.FindGameObjectsWithTag("Triangle_05152");
+            theNote.noteSpeed = 9;
         }
-        else if (currentShape == 8)
+        else if (currentShape == 41)
         {
-            target = GameObject.FindGameObjectsWithTag("Octagon");
-            theNote.noteSpeed = 24;
+            target = GameObject.FindGameObjectsWithTag("Square_1111");
+            theNote.noteSpeed = 9;
+        }
+        else if (currentShape == 42)
+        {
+            target = GameObject.FindGameObjectsWithTag("Square_051511");
+            theNote.noteSpeed = 9;
+        }
+        else if (currentShape == 51)
+        {
+            target = GameObject.FindGameObjectsWithTag("Pentagon_1105105");
+            theNote.noteSpeed = 9;
+        }
+        else if (currentShape == 61)
+        {
+            target = GameObject.FindGameObjectsWithTag("Hexagon_1105050505");
+            theNote.noteSpeed = 9;
+        }
+        else if (currentShape == 81)
+        {
+            target = GameObject.FindGameObjectsWithTag("Octagon_0505050505050505");
+            theNote.noteSpeed = 9;
         }
     }
 
@@ -125,7 +149,7 @@ public class ShapeManager : MonoBehaviour
     bool CheckPassNote(){
         if (isPassed) // GameOver처리, 박자 별 Animation 실행
             {
-            if (Vector2.Distance(theNote.noteImage.transform.position, target[target_idx].transform.position) > 80f)
+            if (Vector2.Distance(theNote.Cursor.transform.position, target[target_idx].transform.position) > 80f)
             {
                 if (isChecked)
                 {
@@ -142,32 +166,62 @@ public class ShapeManager : MonoBehaviour
     }
 
     void FadeOut_Animation(int beforeShape){
-        if(beforeShape == 3){
-            TriangleAnim.SetTrigger(FadeOut);
+        if(beforeShape == 31){
+            Triangle_121_Anim.SetTrigger(FadeOut);
         }
-        else if(beforeShape == 4){
-            SquareAnim.SetTrigger(FadeOut);
+        else if(beforeShape == 32){
+            Triangle_112_Anim.SetTrigger(FadeOut);
         }
-        else if(beforeShape == 6){
-            HexagonAnim.SetTrigger(FadeOut);
+        else if(beforeShape == 33){
+            Triangle_211_Anim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 34){
+            Triangle_05152_Anim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 41){
+            Square_1111_Anim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 42){
+            Square_051511_Anim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 51){
+            Pentagon_1105105_Anim.SetTrigger(FadeOut);
+        }
+        else if(beforeShape == 61){
+            Hexagon_1105050505_Anim.SetTrigger(FadeOut);
         }
         else if(beforeShape == 8){
-            OctagonAnim.SetTrigger(FadeOut);
+            Octagon_0505050505050505_Anim.SetTrigger(FadeOut);
         }
     }
 
     void Bigger_Animation(int currentShape){
-        if(currentShape == 3){
-            TriangleAnim.SetTrigger(Bigger);
+        if(currentShape == 31){
+            Triangle_121_Anim.SetTrigger(Bigger);
         }
-        else if(currentShape == 4){
-            SquareAnim.SetTrigger(Bigger);
+        else if(currentShape == 32){
+            Triangle_112_Anim.SetTrigger(Bigger);
         }
-        else if(currentShape == 6){
-            HexagonAnim.SetTrigger(Bigger);
+        else if(currentShape == 33){
+            Triangle_211_Anim.SetTrigger(Bigger);
         }
-        else if(currentShape == 8){
-            OctagonAnim.SetTrigger(Bigger);
+        else if(currentShape == 34){
+            Triangle_05152_Anim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 41){
+            Square_1111_Anim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 42){
+            Square_051511_Anim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 51){
+            Pentagon_1105105_Anim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 61){
+            Hexagon_1105050505_Anim.SetTrigger(Bigger);
+        }
+        else if(currentShape == 81){
+            Octagon_0505050505050505_Anim.SetTrigger(Bigger);
         }
     }
 

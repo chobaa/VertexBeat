@@ -15,7 +15,7 @@ C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat
 -logFile
 Logs/AssetImportWorker3.log
 -srvPort
-6386
+10893
 Successfully changed project path to: C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat
 C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/Chobaa/Documents/GitHub/VertexBeat/VertexBeat
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [1260] Host "[IP] 192.168.0.80 [Port] 0 [Flags] 2 [Guid] 3424191695 [EditorId] 3424191695 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-60AD21I) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [17108] Host "[IP] 192.168.0.79 [Port] 0 [Flags] 2 [Guid] 2842925517 [EditorId] 2842925517 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-60AD21I) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [1260] Host "[IP] 192.168.0.80 [Port] 0 [Flags] 2 [Guid] 3424191695 [EditorId] 3424191695 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-60AD21I) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [17108] Host "[IP] 192.168.0.79 [Port] 0 [Flags] 2 [Guid] 2842925517 [EditorId] 2842925517 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-60AD21I) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 72.99 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 144.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.26f1 (a16dc32e0ff2)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/Resources/UnitySubsystems
@@ -67,80 +67,80 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56700
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56220
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.26f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009541 seconds.
+Registered in 0.011509 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 266 ms
-Refreshing native plugins compatible for Editor in 71.99 ms, found 3 plugins.
+Android Extension - Scanning For ADB Devices 378 ms
+Refreshing native plugins compatible for Editor in 71.45 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.998 seconds
+- Completed reload, in  1.372 seconds
 Domain Reload Profiling:
-	ReloadAssembly (999ms)
-		BeginReloadAssembly (98ms)
+	ReloadAssembly (1373ms)
+		BeginReloadAssembly (154ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (783ms)
-			LoadAssemblies (95ms)
+		EndReloadAssembly (1056ms)
+			LoadAssemblies (152ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (109ms)
+			SetupTypeCache (173ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (29ms)
-			SetupLoadedEditorAssemblies (589ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (746ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (365ms)
+				InitializePlatformSupportModulesInManaged (519ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (72ms)
-				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (100ms)
-				ProcessInitializeOnLoadMethodAttributes (49ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (104ms)
+				ProcessInitializeOnLoadMethodAttributes (50ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.006045 seconds.
+Registered in 0.007309 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Chobaa\Documents\GitHub\VertexBeat\VertexBeat\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Chobaa\Documents\GitHub\VertexBeat\VertexBeat\Library\PackageCache\com.unity.visualscripting@1.8.0\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 69.74 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 75.55 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.162 seconds
+- Completed reload, in  1.300 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1163ms)
-		BeginReloadAssembly (134ms)
+	ReloadAssembly (1302ms)
+		BeginReloadAssembly (162ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (8ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (913ms)
-			LoadAssemblies (99ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1011ms)
+			LoadAssemblies (122ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (286ms)
+			SetupTypeCache (309ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (433ms)
+			RebuildScriptCaches (73ms)
+			SetupLoadedEditorAssemblies (468ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (22ms)
+				InitializePlatformSupportModulesInManaged (28ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (70ms)
-				BeforeProcessingInitializeOnLoad (86ms)
-				ProcessInitializeOnLoadAttributes (225ms)
-				ProcessInitializeOnLoadMethodAttributes (20ms)
-				AfterProcessingInitializeOnLoad (9ms)
+				RefreshPlugins (76ms)
+				BeforeProcessingInitializeOnLoad (93ms)
+				ProcessInitializeOnLoadAttributes (239ms)
+				ProcessInitializeOnLoadMethodAttributes (23ms)
+				AfterProcessingInitializeOnLoad (10ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (7ms)
@@ -148,12 +148,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
-Refreshing native plugins compatible for Editor in 0.49 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 0.65 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3146 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 22 unused Assets / (284.4 KB). Loaded Objects now: 3612.
-Memory consumption went from 116.5 MB to 116.2 MB.
-Total: 3.394800 ms (FindLiveObjects: 0.288900 ms CreateObjectMapping: 0.112700 ms MarkObjects: 2.908600 ms  DeleteObjects: 0.083200 ms)
+Unloading 3192 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 22 unused Assets / (284.1 KB). Loaded Objects now: 3658.
+Memory consumption went from 119.7 MB to 119.4 MB.
+Total: 4.892000 ms (FindLiveObjects: 0.420200 ms CreateObjectMapping: 0.129300 ms MarkObjects: 4.127800 ms  DeleteObjects: 0.212700 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -167,16 +167,28 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 24414.713879 seconds.
-  path: Assets/Image/svgtest.svg
-  artifactKey: Guid(4a68e56d15d51ed4c9ce41f0ff47a9b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Image/svgtest.svg using Guid(4a68e56d15d51ed4c9ce41f0ff47a9b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ac69a06f17a10ed409f764f3df336657') in 0.160322 seconds 
+  Time since last request: 605943.550574 seconds.
+  path: Assets/Image/vertex/CURSOR/CURSOR FILL.png
+  artifactKey: Guid(242f3335a6a93414f998f4af11df544d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/vertex/CURSOR/CURSOR FILL.png using Guid(242f3335a6a93414f998f4af11df544d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21185f9433f8aff57aa1d2558d1da60b') in 0.123349 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/Image/Cursor.png
-  artifactKey: Guid(220a21976dd4b84419d17fbf08c468df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Image/Cursor.png using Guid(220a21976dd4b84419d17fbf08c468df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8caad8c1d7d594f84eed151e2fec6894') in 0.046660 seconds 
+  Time since last request: 788.695025 seconds.
+  path: Assets/Image/vertex/8각형과 변형/3=½ 1.5 2.png
+  artifactKey: Guid(5f8068d934bc8f54e8bcd98cd06ff83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/vertex/8각형과 변형/3=½ 1.5 2.png using Guid(5f8068d934bc8f54e8bcd98cd06ff83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da1129c9d1bfed221459f4afb7705199') in 0.063485 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/Image/vertex/8각형과 변형/5=1 1 ½ 1 ½.png
+  artifactKey: Guid(f9d1e21882fc99b4a99931072d1f6f1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/vertex/8각형과 변형/5=1 1 ½ 1 ½.png using Guid(f9d1e21882fc99b4a99931072d1f6f1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '24091909ea99edef086a7506d7f90ed0') in 0.060776 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Image/vertex/8각형과 변형/8=½ ½ ½ ½ ½ ½ ½ ½.png
+  artifactKey: Guid(9039bba00127c6442944a55b1108da4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Image/vertex/8각형과 변형/8=½ ½ ½ ½ ½ ½ ½ ½.png using Guid(9039bba00127c6442944a55b1108da4c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b79d71bb891e1bf587b634112d2fc07c') in 0.037324 seconds 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
