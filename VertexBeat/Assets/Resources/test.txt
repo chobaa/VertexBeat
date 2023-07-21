@@ -1,11 +1,12 @@
 [Description]
-#Title Splendid Circus
+#Title SplendidCircus
 #Artist Smilegate RPG
 
 [Audio]
 #BPM 148
 #Offset 2228
 #Signature 4/4
+#TotalPlayTime 300
 
 [NoteData]
 #000:316181323334414251

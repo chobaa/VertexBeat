@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NoteManager : MonoBehaviour
 {
-    bool request = true;
+    public bool isDataLoad = true;
     string songInfo = "test";
-    DataManager theDataManager;
+    public DataManager theDataManager;
     public List<int> noteData = new List<int>(); // 노트가 나오는 순서
     // Start is called before the first frame update
     void Start()
@@ -17,9 +17,9 @@ public class NoteManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(request){
+        if(isDataLoad){
             theDataManager.SongDataLoad(songInfo);
-            request = false;
+            isDataLoad = false;
         }
     }
 }

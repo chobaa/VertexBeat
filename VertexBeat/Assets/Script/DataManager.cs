@@ -16,6 +16,7 @@ public class DataManager : MonoBehaviour{
     }
 
     public void SongDataLoad(string name){
+        songData = gameObject.AddComponent<SongData>();
         string FilePath = $"{Application.dataPath}/Resources";
         string readLine = string.Empty;
         NoteData theNoteData = gameObject.AddComponent<NoteData>();
@@ -25,8 +26,13 @@ public class DataManager : MonoBehaviour{
             if(readLine.StartsWith('#')){
                 string[] data = readLine.Split(" ");
                 if(data[0] == "#Title"){
-                    Debug.Log(data[1]);
-                    Debug.Log(data[2]);
+                    songData.setTitle(data[1]);
+                }
+                else if(data[0] == "#BPM"){
+                    songData.setBpm(double.Parse(data[1]));
+                }
+                else if(data[0] == "#TotalPlayTime"){
+                    songData.setTotalPlayTime(double.Parse(data[1]));
                 }
                 else if(data[0].IndexOf(":") == 4){ // 데이터 섹션 읽기
                     int time = 0;

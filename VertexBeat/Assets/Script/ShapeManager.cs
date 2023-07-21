@@ -9,22 +9,10 @@ public class ShapeManager : MonoBehaviour
     Note theNote;
     TimingManager theTimingManager;
     NoteData theNoteData;
-    AudioManager theAudioManager;
-    //Triangle
-    [SerializeField] Animator Triangle_121_Anim = null;
-    [SerializeField] Animator Triangle_112_Anim = null;
-    [SerializeField] Animator Triangle_211_Anim = null;
-    [SerializeField] Animator Triangle_05152_Anim = null;
-    //Square
-    [SerializeField] Animator Square_1111_Anim = null;
-    [SerializeField] Animator Square_051511_Anim = null;
-    //Pentagon
-    [SerializeField] Animator Pentagon_1105105_Anim = null;
-    [SerializeField] Animator Hexagon_1105050505_Anim = null;
-    [SerializeField] Animator Octagon_0505050505050505_Anim = null;
+    AnimManager theAnimManager;
+    NoteManager theNoteManager;
 
-    string FadeOut = "FadeOut";
-    string Bigger = "Bigger";
+    AudioSource audioSource;
 
     // Image beforeImage = null;
     // Image currentImage = null; // 현재 다룰 도형의 이미지
@@ -45,7 +33,9 @@ public class ShapeManager : MonoBehaviour
         theNote = FindObjectOfType<Note>();
         theTimingManager = FindObjectOfType<TimingManager>();
         theNoteData = FindObjectOfType<NoteData>();
-        theAudioManager = FindObjectOfType<AudioManager>();
+        theAnimManager = FindObjectOfType<AnimManager>();
+
+        audioSource = GetComponent<AudioSource>();
         changeShape = true; // 처음에는 도형이 정해져있지 않으므로 도형 가져오기
         target_idx = 1; // 처음 위치는 도형의 맨 윗 꼭짓점으로 설정
     }
@@ -53,7 +43,6 @@ public class ShapeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        theAudioManager.setStartTrue(); // 노래 재생 bool
         if (changeShape)
         { // 도형 변환시
             ChangingShape();
@@ -66,6 +55,7 @@ public class ShapeManager : MonoBehaviour
             theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                audioSource.PlayOneShot(audioSource.clip);
                 if (target_idx == 0 || target_idx == 1)
                 {
                     isChecked = theTimingManager.CheckTiming(target[1], theNote.Cursor, target[2]);
@@ -133,16 +123,14 @@ public class ShapeManager : MonoBehaviour
         Debug.Log(noteData_idx);
         SetTargetTransform(currentShape);
         if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
-            // currentImage = target[0].GetComponent<Image>(); // 해당하는 도형의 이미지 가져오기
             if(beforeShape != 0) { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
                 // beforeImage.enabled = false;
-                FadeOut_Animation(beforeShape);
+                theAnimManager.FadeOut_Animation(beforeShape);
                 Debug.Log("Animation FadeOut");
                 }
             // 현재 도형에 대한 Bigger 애니메이션 재생
             Debug.Log("Animation Bigger");
-            // currentImage.enabled = true;
-            Bigger_Animation(currentShape);
+            theAnimManager.Bigger_Animation(currentShape);
         }
     }
 
@@ -164,79 +152,4 @@ public class ShapeManager : MonoBehaviour
          }
          return false;
     }
-
-    void FadeOut_Animation(int beforeShape){
-        if(beforeShape == 31){
-            Triangle_121_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 32){
-            Triangle_112_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 33){
-            Triangle_211_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 34){
-            Triangle_05152_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 41){
-            Square_1111_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 42){
-            Square_051511_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 51){
-            Pentagon_1105105_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 61){
-            Hexagon_1105050505_Anim.SetTrigger(FadeOut);
-        }
-        else if(beforeShape == 8){
-            Octagon_0505050505050505_Anim.SetTrigger(FadeOut);
-        }
-    }
-
-    void Bigger_Animation(int currentShape){
-        if(currentShape == 31){
-            Triangle_121_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 32){
-            Triangle_112_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 33){
-            Triangle_211_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 34){
-            Triangle_05152_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 41){
-            Square_1111_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 42){
-            Square_051511_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 51){
-            Pentagon_1105105_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 61){
-            Hexagon_1105050505_Anim.SetTrigger(Bigger);
-        }
-        else if(currentShape == 81){
-            Octagon_0505050505050505_Anim.SetTrigger(Bigger);
-        }
-    }
-
-    /*void NoteClick_Animation(int beforeShape){
-        if(beforeShape == 3){
-            TriangleAnim.SetTrigger(Clicked);
-        }
-        else if(beforeShape == 4){
-            SquareAnim.SetTrigger(Clicked);
-        }
-        else if(beforeShape == 6){
-            HexagonAnim.SetTrigger(Clicked);
-        }
-        else if(beforeShape == 8){
-            OctagonAnim.SetTrigger(Clicked);
-        }
-    }*/
 }

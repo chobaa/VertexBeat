@@ -12,7 +12,7 @@ public class SongData : MonoBehaviour
 
     public int totalFigureCount;          // 총 도형의 갯수
     public int totalNoteCount;           // 총 Note 수
-    public float totalPlayTime;         // 총 재생 시간
+    public double totalPlayTime;         // 총 재생 시간
 
     void Awake()
     {
@@ -74,11 +74,11 @@ public class SongData : MonoBehaviour
     {
         this.lnType = lnType;
     }
-    public float getTotalPlayTime()
+    public double getTotalPlayTime()
     {
         return totalPlayTime;
     }
-    public void setTotalPlayTime(float totalPlayTime)
+    public void setTotalPlayTime(double totalPlayTime)
     {
         this.totalPlayTime = totalPlayTime;
     }
