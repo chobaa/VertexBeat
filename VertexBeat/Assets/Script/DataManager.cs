@@ -5,41 +5,35 @@ using System.IO;
 using System;
 
 public class DataManager : MonoBehaviour{
-    public SongData songData;
-
-    public SongData getSongData() {
-        return songData;
-    }
-    
-    void Awake(){
-        SongDataLoad("test");
-    }
-
     public void SongDataLoad(string name){
-        songData = gameObject.AddComponent<SongData>();
         string FilePath = $"{Application.dataPath}/Resources";
         string readLine = string.Empty;
-        NoteData theNoteData = gameObject.AddComponent<NoteData>();
         StreamReader sr = new StreamReader($"{FilePath}/{name}.txt");
         while(!sr.EndOfStream){
             readLine = sr.ReadLine();
             if(readLine.StartsWith('#')){
                 string[] data = readLine.Split(" ");
                 if(data[0] == "#Title"){
-                    songData.setTitle(data[1]);
+                    SongData.instance.title = data[1];
                 }
                 else if(data[0] == "#BPM"){
-                    songData.setBpm(double.Parse(data[1]));
+                    SongData.instance.bpm = double.Parse(data[1]);
+                }
+                else if(data[0] == "#Signature"){
+                    SongData.instance.signature = double.Parse(data[1]);
+                }
+                else if(data[0] == "#Offset"){
+                    SongData.instance.offset = double.Parse(data[1]);
                 }
                 else if(data[0] == "#TotalPlayTime"){
-                    songData.setTotalPlayTime(double.Parse(data[1]));
+                    SongData.instance.setTotalPlayTime(double.Parse(data[1]));
                 }
                 else if(data[0].IndexOf(":") == 4){ // 데이터 섹션 읽기
                     int time = 0;
                     Int32.TryParse(data[0].Trim().Substring(1,3), out time);
                     string noteStr = data[0].Trim().Substring(5);
                     List<Tuple<int, float>> noteDataList = getNoteDataOfStr(time, noteStr);
-                    theNoteData.setNoteDataList(noteDataList);
+                    NoteData.instance.noteDataList.AddRange(noteDataList);
                 }
             }
         }

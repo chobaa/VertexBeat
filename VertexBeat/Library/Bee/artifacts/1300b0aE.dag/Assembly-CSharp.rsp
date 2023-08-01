@@ -361,6 +361,7 @@
 "Assets/Script/NoteManager.cs"
 "Assets/Script/ProgressBar.cs"
 "Assets/Script/ShapeManager.cs"
+"Assets/Script/Sync.cs"
 "Assets/Script/TimingManager.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"

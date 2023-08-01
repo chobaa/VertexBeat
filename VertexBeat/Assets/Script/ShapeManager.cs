@@ -8,9 +8,9 @@ public class ShapeManager : MonoBehaviour
 {
     Note theNote;
     TimingManager theTimingManager;
-    NoteData theNoteData;
     AnimManager theAnimManager;
     NoteManager theNoteManager;
+    DataManager theDataManager;
 
     AudioSource audioSource;
 
@@ -23,17 +23,19 @@ public class ShapeManager : MonoBehaviour
     public bool changeShape; // 도형이 바뀌어야 할 때 true, 아니면 false
     [SerializeField] int noteData_idx = 0; // 노트가 바뀌는 순서
 
-    bool isChecked = true; // 노트가 클릭되면 true, isPassed가 활성화되어 노트가 지나가면 false
+    [SerializeField] bool isChecked = false; // 노트가 클릭되면 true, isPassed가 활성화되어 노트가 지나가면 false
 
-    bool isPassed = false; // 노트가 꼭짓점을 지나가면 true; isChecked를 확인하고나면 다시 false
+    [SerializeField] bool isPassed = false; // 노트가 꼭짓점을 지나가면 true; isChecked를 확인하고나면 다시 false
+
+    bool image_cover = false;
 
     // Start is called before the first frame update
     void Start()
     {
         theNote = FindObjectOfType<Note>();
         theTimingManager = FindObjectOfType<TimingManager>();
-        theNoteData = FindObjectOfType<NoteData>();
         theAnimManager = FindObjectOfType<AnimManager>();
+        theDataManager = FindObjectOfType<DataManager>();
 
         audioSource = GetComponent<AudioSource>();
         changeShape = true; // 처음에는 도형이 정해져있지 않으므로 도형 가져오기
@@ -43,25 +45,34 @@ public class ShapeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (changeShape)
-        { // 도형 변환시
-            ChangingShape();
-            changeShape = false;
-        }
-        else
-        {
-            CheckPassNote();
-            // 도형 변환을 안해도 되면 NoteMove 호출
-            theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                audioSource.PlayOneShot(audioSource.clip);
-                if (target_idx == 0 || target_idx == 1)
-                {
-                    isChecked = theTimingManager.CheckTiming(target[1], theNote.Cursor, target[2]);
+        if(!image_cover){
+            if(!GameManager.instance.data_load){
+                theDataManager.SongDataLoad("test");
+                GameManager.instance.data_load = true;
+            }
+            else{
+                if (changeShape)
+                { // 도형 변환시
+                    ChangingShape();
+                    changeShape = false;
                 }
                 else
-                    isChecked = theTimingManager.CheckTiming(target[target_idx - 1], theNote.Cursor, target[target_idx]);
+                {
+                    if(isPassed && !isChecked) Debug.Log("GameOver"); // 판정범위를 지나갔을 때 good / pass가 뜨지 않으면 GameOver
+                    // 도형 변환을 안해도 되면 NoteMove 호출
+                    theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
+                    if (Input.GetKeyDown(KeyCode.Space))
+                    {
+                        isPassed = false;
+                        audioSource.PlayOneShot(audioSource.clip);
+                        if (target_idx == 0 || target_idx == 1)
+                        {
+                            isChecked = theTimingManager.CheckTiming(target[1], theNote.Cursor, target[2]);
+                        }
+                        else
+                            isChecked = theTimingManager.CheckTiming(target[target_idx - 1], theNote.Cursor, target[target_idx]);
+                    }
+                }
             }
         }
     }
@@ -117,9 +128,9 @@ public class ShapeManager : MonoBehaviour
 
     void ChangingShape(){
         beforeShape = currentShape;
-        List<Tuple<int,float>> noteData = theNoteData.getNoteDataList();
+        List<Tuple<int,float>> noteData = NoteData.instance.getNoteDataList();
         currentShape = noteData[noteData_idx++].Item1;
-        Debug.Log(currentShape);
+        Debug.Log("Shape : " + currentShape);
         Debug.Log(noteData_idx);
         SetTargetTransform(currentShape);
         if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
@@ -134,7 +145,7 @@ public class ShapeManager : MonoBehaviour
         }
     }
 
-    bool CheckPassNote(){
+    /* bool CheckPassNote(){
         if (isPassed) // GameOver처리, 박자 별 Animation 실행
             {
             if (Vector2.Distance(theNote.Cursor.transform.position, target[target_idx].transform.position) > 80f)
@@ -146,10 +157,9 @@ public class ShapeManager : MonoBehaviour
                     return true;
                 }
                 else
-                   //Debug.Log("GameOver");
                    return false;
             }
          }
          return false;
-    }
+    } */
 }

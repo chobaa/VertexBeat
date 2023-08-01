@@ -3,9 +3,9 @@
 #Artist Smilegate RPG
 
 [Audio]
-#BPM 148
+#BPM 60
 #Offset 2228
-#Signature 4/4
+#Signature 1
 #TotalPlayTime 300
 
 [NoteData]

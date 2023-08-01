@@ -8,7 +8,6 @@ public class Note : MonoBehaviour
     [SerializeField] public GameObject Cursor = null;
     public float noteSpeed = 5f; // 노트의 기본 이동속도
     public int bpm = 1; // 노래의 bpm
-    [SerializeField] bool isDelayed = false; // distance 측정 확인 변수 couroutine 사용.
 
     void Start()
     {
@@ -20,23 +19,21 @@ public class Note : MonoBehaviour
     {
         Cursor.transform.position = Vector2.MoveTowards(Cursor.transform.position, target[target_idx].transform.position, bpm * noteSpeed * Time.deltaTime);
         float distance = Vector2.Distance(Cursor.transform.position, target[target_idx].transform.position);
-        if (distance < 0.01 && !isDelayed)
+        if (distance < 0.01)
         {
             target_idx += 1;
-            isPassed = true;
-            isDelayed = true;
             StartCoroutine(isDelay());
-            }
+            isPassed = true;
+        }
         if (target_idx == currentShape/10 + 1)
         {
             target_idx = 1;
-            isPassed = true;
             changeShape = true;
+            isPassed = true;
         }
     }
 
     IEnumerator isDelay(){
-        yield return new WaitForSeconds(0.2f); // 0.2초 동안 distance 측정 x
-        isDelayed = false;
+        yield return new WaitForSeconds(0.1f); // 0.1초 동안 distance 측정 x
     }
 }
