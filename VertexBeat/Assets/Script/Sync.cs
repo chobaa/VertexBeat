@@ -12,31 +12,33 @@ public class Sync : MonoBehaviour
     public double beatPerSecond;
     public double beatPerSample;
 
-    bool value_reset = false;
-
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.data_load && !value_reset){
+        if (GameManager.instance.data_load && !GameManager.instance.sync_load)
+        {
             audioSource = GetComponent<AudioSource>();
             stdBPM = 60;
             audioSource.Play();
-            
-            oneBeatTime = (stdBPM / SongData.instance.bpm) * SongData.instance.signature;
+            oneBeatTime = (stdBPM / SongData.instance.bpm) * SongData.instance.signature / 2;
             nextSample = oneBeatTime * audioSource.clip.frequency;
             beatPerSecond = stdBPM / (8 * SongData.instance.bpm);
             beatPerSample = oneBeatTime * audioSource.clip.frequency;
-            value_reset = true;
+            NoteData.instance.beatPerSample = beatPerSample;
+            GameManager.instance.sync_load = true;
         }
-        if(value_reset && audioSource.timeSamples >= nextSample){
+        SongData.instance.currentPlayTime = audioSource.timeSamples;
+        if (GameManager.instance.sync_load && audioSource.timeSamples >= nextSample)
+        {
+            NoteData.instance.isNextNote = true;
             StartCoroutine(PlayTik(1));
         }
     }
 
-    IEnumerator PlayTik(double tikTime){
+    IEnumerator PlayTik(double tikTime)
+    {
         Debug.Log("tik");
         nextSample += beatPerSample;
-        SongData.instance.currentPlayTime = nextSample;
         yield return null; // tikTime 만큼 대기
     }
 }

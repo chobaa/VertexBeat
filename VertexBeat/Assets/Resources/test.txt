@@ -3,11 +3,12 @@
 #Artist Smilegate RPG
 
 [Audio]
-#BPM 60
+#BPM 190
 #Offset 2228
 #Signature 1
 #TotalPlayTime 300
+#FirstNoteSample 27852
 
 [NoteData]
-#000:316181323334414251
-#007:313131344142
+#000:4141414141414141
+#007:818181818181818181

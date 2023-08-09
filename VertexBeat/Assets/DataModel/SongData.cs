@@ -11,6 +11,7 @@ public class SongData : MonoBehaviour
     public double bpm;                  // BPM
     public double signature;            // Signature
     public double offset;                   // Offset
+    public double firstNoteSample; // 첫 번째 note의 시간 기록
 
     public int totalFigureCount;          // 총 도형의 갯수
     public int totalNoteCount;           // 총 Note 수
@@ -20,11 +21,13 @@ public class SongData : MonoBehaviour
     void Awake()
     {
         // 싱글톤 디자인
-        if(instance == null){
+        if (instance == null)
+        {
             instance = this;
         }
-        else{
-            if(instance != this)
+        else
+        {
+            if (instance != this)
                 Destroy(this.gameObject);
         }
 
@@ -58,6 +61,11 @@ public class SongData : MonoBehaviour
     public void setTotalPlayTime(double totalPlayTime)
     {
         this.totalPlayTime = totalPlayTime;
+    }
+
+    public void setFirstNoteSample(double firstNoteSample)
+    {
+        this.firstNoteSample = firstNoteSample;
     }
 
     // debug

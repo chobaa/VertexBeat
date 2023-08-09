@@ -27,8 +27,6 @@ public class ShapeManager : MonoBehaviour
 
     [SerializeField] bool isPassed = false; // 노트가 꼭짓점을 지나가면 true; isChecked를 확인하고나면 다시 false
 
-    bool image_cover = false;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +43,15 @@ public class ShapeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!image_cover){
-            if(!GameManager.instance.data_load){
+        if (GameManager.instance.isPlaying)
+        {
+            if (!GameManager.instance.data_load)
+            {
                 theDataManager.SongDataLoad("test");
                 GameManager.instance.data_load = true;
             }
-            else{
+            else
+            {
                 if (changeShape)
                 { // 도형 변환시
                     ChangingShape();
@@ -58,19 +59,19 @@ public class ShapeManager : MonoBehaviour
                 }
                 else
                 {
-                    if(isPassed && !isChecked) Debug.Log("GameOver"); // 판정범위를 지나갔을 때 good / pass가 뜨지 않으면 GameOver
+                    // if (isPassed && !isChecked) Debug.Log("GameOver"); // 판정범위를 지나갔을 때 good / pass가 뜨지 않으면 GameOver
                     // 도형 변환을 안해도 되면 NoteMove 호출
-                    theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
+                    theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape, NoteData.instance.target_cnt);
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         isPassed = false;
                         audioSource.PlayOneShot(audioSource.clip);
                         if (target_idx == 0 || target_idx == 1)
                         {
-                            isChecked = theTimingManager.CheckTiming(target[1], theNote.Cursor, target[2]);
+                            isChecked = theTimingManager.CheckTiming();
                         }
                         else
-                            isChecked = theTimingManager.CheckTiming(target[target_idx - 1], theNote.Cursor, target[target_idx]);
+                            isChecked = theTimingManager.CheckTiming();
                     }
                 }
             }
@@ -102,7 +103,8 @@ public class ShapeManager : MonoBehaviour
         else if (currentShape == 41)
         {
             target = GameObject.FindGameObjectsWithTag("Square_1111");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed = 15;
+            NoteData.instance.target_cnt = 2;
         }
         else if (currentShape == 42)
         {
@@ -122,23 +124,27 @@ public class ShapeManager : MonoBehaviour
         else if (currentShape == 81)
         {
             target = GameObject.FindGameObjectsWithTag("Octagon_0505050505050505");
-            theNote.noteSpeed = 9;
+            NoteData.instance.target_cnt = 1;
+            theNote.noteSpeed = 3;
         }
     }
 
-    void ChangingShape(){
+    void ChangingShape()
+    {
         beforeShape = currentShape;
-        List<Tuple<int,float>> noteData = NoteData.instance.getNoteDataList();
+        List<Tuple<int, float>> noteData = NoteData.instance.getNoteDataList();
         currentShape = noteData[noteData_idx++].Item1;
         Debug.Log("Shape : " + currentShape);
         Debug.Log(noteData_idx);
         SetTargetTransform(currentShape);
-        if(currentShape != beforeShape){ // 이미지가 변했을 때에만 애니메이션 재생
-            if(beforeShape != 0) { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
+        if (currentShape != beforeShape)
+        { // 이미지가 변했을 때에만 애니메이션 재생
+            if (beforeShape != 0)
+            { // 이전에 도형이 존재했다면 FadeOut 애니메이션 재생
                 // beforeImage.enabled = false;
                 theAnimManager.FadeOut_Animation(beforeShape);
                 Debug.Log("Animation FadeOut");
-                }
+            }
             // 현재 도형에 대한 Bigger 애니메이션 재생
             Debug.Log("Animation Bigger");
             theAnimManager.Bigger_Animation(currentShape);
