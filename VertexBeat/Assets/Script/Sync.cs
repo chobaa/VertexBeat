@@ -11,6 +11,9 @@ public class Sync : MonoBehaviour
     public double nextSample;
     public double beatPerSecond;
     public double beatPerSample;
+    public double beforeSample = 0;
+
+    public int beatcount = 0;
 
     // Update is called once per frame
     void Update()
@@ -39,6 +42,7 @@ public class Sync : MonoBehaviour
     {
         Debug.Log("tik");
         nextSample += beatPerSample;
+        beatcount++;
         yield return null; // tikTime 만큼 대기
     }
 }

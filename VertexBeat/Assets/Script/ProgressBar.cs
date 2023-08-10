@@ -12,9 +12,10 @@ public class ProgressBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.instance.data_load){
+        if (GameManager.instance.data_load)
+        {
             playtime = SongData.instance.totalPlayTime;
-            loadingBar.fillAmount = (float)(SongData.instance.currentPlayTime / (playtime * 44100));
+            loadingBar.fillAmount = (float)(SongData.instance.currentPlayTime / 2800000);
         }
     }
 }

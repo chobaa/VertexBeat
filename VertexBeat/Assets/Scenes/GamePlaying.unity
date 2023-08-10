@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6098956}
   m_Layer: 5
-  m_Name: Square4
+  m_Name: Square3
   m_TagString: Square_051511
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,7 +152,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1170884137}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 33808486}
   m_Layer: 5
-  m_Name: Hexagon2
+  m_Name: Hexagon1
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -188,7 +188,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -223,9 +223,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1644256848}
   - {fileID: 1084295265}
   - {fileID: 1184257899}
+  - {fileID: 1644256848}
   m_Father: {fileID: 1986915563}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109161052}
   m_Layer: 5
-  m_Name: Square3
+  m_Name: Square2
   m_TagString: Square_051511
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1170884137}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -379,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 209204016}
   m_Layer: 5
-  m_Name: Square1
+  m_Name: Square4
   m_TagString: Square_1111
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -398,7 +398,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 299607843}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -491,7 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 217334823}
   m_Layer: 5
-  m_Name: Square2
+  m_Name: Square1
   m_TagString: Square_051511
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -510,7 +510,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1170884137}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -624,6 +624,7 @@ MonoBehaviour:
   - {fileID: 0}
   beforeShape: 0
   currentShape: 0
+  target_idx: 0
   changeShape: 0
   noteData_idx: 0
   isChecked: 0
@@ -792,10 +793,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 209204016}
   - {fileID: 1439627538}
   - {fileID: 1117916268}
   - {fileID: 648508218}
+  - {fileID: 209204016}
   m_Father: {fileID: 1980736879}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1014,9 +1015,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1230915356}
-  - {fileID: 717154131}
   - {fileID: 2098280893}
+  - {fileID: 717154131}
+  - {fileID: 1230915356}
   m_Father: {fileID: 2110444476}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1035,7 +1036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 520201071}
   m_Layer: 5
-  m_Name: Pentagon5
+  m_Name: Pentagon4
   m_TagString: Pentagon_1105105
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1054,7 +1055,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722820654}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1107,7 +1108,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Cursor: {fileID: 0}
-  noteSpeed: 5
+  noteSpeed:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
   bpm: 90
   cnt: 0
 --- !u!1 &563011000
@@ -1120,7 +1129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 563011001}
   m_Layer: 5
-  m_Name: Octagon4
+  m_Name: Octagon3
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1139,7 +1148,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1156,7 +1165,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648508218}
   m_Layer: 5
-  m_Name: Square4
+  m_Name: Square3
   m_TagString: Square_1111
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1175,7 +1184,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 299607843}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1192,7 +1201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683340746}
   m_Layer: 5
-  m_Name: Pentagon4
+  m_Name: Pentagon3
   m_TagString: Pentagon_1105105
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1211,7 +1220,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722820654}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1376,11 +1385,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1414450135}
   - {fileID: 1187388084}
   - {fileID: 738980696}
   - {fileID: 683340746}
   - {fileID: 520201071}
+  - {fileID: 1414450135}
   m_Father: {fileID: 1492615508}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1399,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738980696}
   m_Layer: 5
-  m_Name: Pentagon3
+  m_Name: Pentagon2
   m_TagString: Pentagon_1105105
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1418,7 +1427,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722820654}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1435,7 +1444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 746097539}
   m_Layer: 5
-  m_Name: Octagon1
+  m_Name: Octagon8
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1454,7 +1463,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1565,9 +1574,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1558398735}
-  - {fileID: 1920825338}
   - {fileID: 1120966215}
+  - {fileID: 1920825338}
+  - {fileID: 1558398735}
   m_Father: {fileID: 1807654040}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1760,6 +1769,8 @@ MonoBehaviour:
   nextSample: 0
   beatPerSecond: 0
   beatPerSample: 0
+  beforeSample: 0
+  beatcount: 0
 --- !u!1 &839675303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,7 +1781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 839675304}
   m_Layer: 5
-  m_Name: Hexagon3
+  m_Name: Hexagon2
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,7 +1800,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1934,7 +1945,7 @@ GameObject:
   m_Component:
   - component: {fileID: 880287428}
   m_Layer: 5
-  m_Name: Triangle2
+  m_Name: Triangle1
   m_TagString: Triangle_121
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1953,7 +1964,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421276841}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2038,7 +2049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 930422867}
   m_Layer: 5
-  m_Name: Hexagon1
+  m_Name: Hexagon6
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2057,7 +2068,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2194,7 +2205,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNextNote: 0
   beatPerSample: 0
-  target_cnt: 0
+  target_cnt: 0000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1005709531
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,12 +2234,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 930422867}
   - {fileID: 33808486}
   - {fileID: 839675304}
   - {fileID: 1115282994}
   - {fileID: 1893245813}
   - {fileID: 1616518312}
+  - {fileID: 930422867}
   m_Father: {fileID: 2093430841}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2247,7 +2258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1084295265}
   m_Layer: 5
-  m_Name: Triangle2
+  m_Name: Triangle1
   m_TagString: Triangle_05152
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2266,7 +2277,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 45405906}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2283,7 +2294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1115282994}
   m_Layer: 5
-  m_Name: Hexagon4
+  m_Name: Hexagon3
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2302,7 +2313,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2319,7 +2330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1117916268}
   m_Layer: 5
-  m_Name: Square3
+  m_Name: Square2
   m_TagString: Square_1111
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2338,7 +2349,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 299607843}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2355,7 +2366,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1120966215}
   m_Layer: 5
-  m_Name: Triangle3
+  m_Name: Triangle1
   m_TagString: Triangle_211
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2374,7 +2385,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 756698581}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2409,10 +2420,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1806821901}
   - {fileID: 217334823}
   - {fileID: 109161052}
   - {fileID: 6098956}
+  - {fileID: 1806821901}
   m_Father: {fileID: 1309867961}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2431,7 +2442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1184257899}
   m_Layer: 5
-  m_Name: Triangle3
+  m_Name: Triangle2
   m_TagString: Triangle_05152
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2450,7 +2461,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 45405906}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2467,7 +2478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1187388084}
   m_Layer: 5
-  m_Name: Pentagon2
+  m_Name: Pentagon1
   m_TagString: Pentagon_1105105
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2486,7 +2497,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722820654}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2503,7 +2514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1230915356}
   m_Layer: 5
-  m_Name: Triangle1
+  m_Name: Triangle3
   m_TagString: Triangle_112
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2522,7 +2533,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 493037557}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2539,7 +2550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265865078}
   m_Layer: 5
-  m_Name: Triangle1
+  m_Name: Triangle3
   m_TagString: Triangle_121
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2558,7 +2569,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421276841}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2707,7 +2718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1414450135}
   m_Layer: 5
-  m_Name: Pentagon1
+  m_Name: Pentagon5
   m_TagString: Pentagon_1105105
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2726,7 +2737,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 722820654}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2761,9 +2772,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1265865078}
   - {fileID: 880287428}
   - {fileID: 1927670951}
+  - {fileID: 1265865078}
   m_Father: {fileID: 166436933}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2782,7 +2793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1424970070}
   m_Layer: 5
-  m_Name: Octagon6
+  m_Name: Octagon5
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2801,7 +2812,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2818,7 +2829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1439627538}
   m_Layer: 5
-  m_Name: Square2
+  m_Name: Square1
   m_TagString: Square_1111
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2837,7 +2848,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 299607843}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2953,7 +2964,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1498453663}
   m_Layer: 5
-  m_Name: Octagon5
+  m_Name: Octagon4
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2972,7 +2983,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3124,7 +3135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1558398735}
   m_Layer: 5
-  m_Name: Triangle1
+  m_Name: Triangle3
   m_TagString: Triangle_211
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3143,7 +3154,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 756698581}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3160,7 +3171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1594527776}
   m_Layer: 5
-  m_Name: Octagon3
+  m_Name: Octagon2
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3179,7 +3190,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3196,7 +3207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1616518312}
   m_Layer: 5
-  m_Name: Hexagon6
+  m_Name: Hexagon5
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3215,7 +3226,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3331,7 +3342,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1644256848}
   m_Layer: 5
-  m_Name: Triangle1
+  m_Name: Triangle3
   m_TagString: Triangle_05152
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3350,7 +3361,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 45405906}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3367,7 +3378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646500646}
   m_Layer: 5
-  m_Name: Octagon7
+  m_Name: Octagon6
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3386,7 +3397,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3480,7 +3491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806821901}
   m_Layer: 5
-  m_Name: Square1
+  m_Name: Square4
   m_TagString: Square_051511
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3499,7 +3510,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1170884137}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3714,7 +3725,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1893245813}
   m_Layer: 5
-  m_Name: Hexagon5
+  m_Name: Hexagon4
   m_TagString: Hexagon_1105050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3733,7 +3744,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1005709532}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3750,7 +3761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1900087123}
   m_Layer: 5
-  m_Name: Octagon2
+  m_Name: Octagon1
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3769,7 +3780,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3822,7 +3833,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1927670951}
   m_Layer: 5
-  m_Name: Triangle3
+  m_Name: Triangle2
   m_TagString: Triangle_121
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3841,7 +3852,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1421276841}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3912,7 +3923,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1964095211}
   m_Layer: 5
-  m_Name: Octagon8
+  m_Name: Octagon7
   m_TagString: Octagon_0505050505050505
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3931,7 +3942,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068635817}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4164,7 +4175,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 746097539}
   - {fileID: 1900087123}
   - {fileID: 1594527776}
   - {fileID: 563011001}
@@ -4172,6 +4182,7 @@ RectTransform:
   - {fileID: 1424970070}
   - {fileID: 1646500646}
   - {fileID: 1964095211}
+  - {fileID: 746097539}
   m_Father: {fileID: 1642507006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4289,7 +4300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2098280893}
   m_Layer: 5
-  m_Name: Triangle3
+  m_Name: Triangle1
   m_TagString: Triangle_112
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4308,7 +4319,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 493037557}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

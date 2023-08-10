@@ -12,7 +12,7 @@ public class NoteData : MonoBehaviour
     public bool isNextNote = false;
 
     public double beatPerSample; // 노래의 beatSample 단위 기록
-    public int target_cnt; // Sample 단위 수정
+    public int[] target_cnt; // Sample 단위 수정
 
     void Awake()
     {

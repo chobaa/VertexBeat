@@ -19,7 +19,7 @@ public class ShapeManager : MonoBehaviour
     [SerializeField] GameObject[] target; // note의 다음 목적지
     public int beforeShape = 0; // 이전 도형 저장
     public int currentShape = 0; // 각 state별로 숫자를 부여 2 = line, 3 = triangle, 4 = square , 5 = pentagon, 6 = hexagon, 8 = octagon
-    int target_idx; // 현재 target의 index
+    [SerializeField] int target_idx; // 현재 target의 index
     public bool changeShape; // 도형이 바뀌어야 할 때 true, 아니면 false
     [SerializeField] int noteData_idx = 0; // 노트가 바뀌는 순서
 
@@ -61,11 +61,11 @@ public class ShapeManager : MonoBehaviour
                 {
                     // if (isPassed && !isChecked) Debug.Log("GameOver"); // 판정범위를 지나갔을 때 good / pass가 뜨지 않으면 GameOver
                     // 도형 변환을 안해도 되면 NoteMove 호출
-                    theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape, NoteData.instance.target_cnt);
+                    theNote.NoteMove(target, ref target_idx, currentShape, ref isPassed, ref changeShape);
                     if (Input.GetKeyDown(KeyCode.Space))
                     {
                         isPassed = false;
-                        audioSource.PlayOneShot(audioSource.clip);
+                        //audioSource.PlayOneShot(audioSource.clip);
                         if (target_idx == 0 || target_idx == 1)
                         {
                             isChecked = theTimingManager.CheckTiming();
@@ -83,49 +83,111 @@ public class ShapeManager : MonoBehaviour
         if (currentShape == 31)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_112");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 14;
+            theNote.noteSpeed[1] = 14;
+            theNote.noteSpeed[2] = 17;
+            NoteData.instance.target_cnt[0] = 2;
+            NoteData.instance.target_cnt[1] = 2;
+            NoteData.instance.target_cnt[2] = 4;
         }
         else if (currentShape == 32)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_121");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 14;
+            theNote.noteSpeed[1] = 17;
+            theNote.noteSpeed[2] = 14;
+            NoteData.instance.target_cnt[0] = 2;
+            NoteData.instance.target_cnt[1] = 4;
+            NoteData.instance.target_cnt[2] = 2;
         }
         else if (currentShape == 33)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_211");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 17;
+            theNote.noteSpeed[1] = 14;
+            theNote.noteSpeed[2] = 14;
+            NoteData.instance.target_cnt[0] = 4;
+            NoteData.instance.target_cnt[1] = 2;
+            NoteData.instance.target_cnt[2] = 2;
         }
         else if (currentShape == 34)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_05152");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 7;
+            theNote.noteSpeed[1] = 12;
+            theNote.noteSpeed[2] = 17;
+            NoteData.instance.target_cnt[0] = 1;
+            NoteData.instance.target_cnt[1] = 3;
+            NoteData.instance.target_cnt[2] = 4;
         }
         else if (currentShape == 41)
         {
             target = GameObject.FindGameObjectsWithTag("Square_1111");
-            theNote.noteSpeed = 15;
-            NoteData.instance.target_cnt = 2;
+            theNote.noteSpeed[0] = 14;
+            theNote.noteSpeed[1] = 14;
+            theNote.noteSpeed[2] = 14;
+            theNote.noteSpeed[3] = 14;
+            NoteData.instance.target_cnt[0] = 2;
+            NoteData.instance.target_cnt[1] = 2;
+            NoteData.instance.target_cnt[2] = 2;
+            NoteData.instance.target_cnt[3] = 2;
         }
         else if (currentShape == 42)
         {
             target = GameObject.FindGameObjectsWithTag("Square_051511");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 7;
+            theNote.noteSpeed[1] = 12;
+            theNote.noteSpeed[2] = 14;
+            theNote.noteSpeed[3] = 14;
+            NoteData.instance.target_cnt[0] = 1;
+            NoteData.instance.target_cnt[1] = 3;
+            NoteData.instance.target_cnt[2] = 2;
+            NoteData.instance.target_cnt[3] = 2;
         }
         else if (currentShape == 51)
         {
             target = GameObject.FindGameObjectsWithTag("Pentagon_1105105");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 11;
+            theNote.noteSpeed[1] = 11;
+            theNote.noteSpeed[2] = 9;
+            theNote.noteSpeed[3] = 14;
+            theNote.noteSpeed[4] = 9;
         }
         else if (currentShape == 61)
         {
             target = GameObject.FindGameObjectsWithTag("Hexagon_1105050505");
-            theNote.noteSpeed = 9;
+            theNote.noteSpeed[0] = 14;
+            theNote.noteSpeed[1] = 14;
+            theNote.noteSpeed[2] = 7;
+            theNote.noteSpeed[3] = 7;
+            theNote.noteSpeed[4] = 7;
+            theNote.noteSpeed[5] = 7;
+            NoteData.instance.target_cnt[0] = 2;
+            NoteData.instance.target_cnt[1] = 2;
+            NoteData.instance.target_cnt[2] = 1;
+            NoteData.instance.target_cnt[3] = 1;
+            NoteData.instance.target_cnt[4] = 1;
+            NoteData.instance.target_cnt[5] = 1;
         }
         else if (currentShape == 81)
         {
             target = GameObject.FindGameObjectsWithTag("Octagon_0505050505050505");
-            NoteData.instance.target_cnt = 1;
-            theNote.noteSpeed = 3;
+            theNote.noteSpeed[0] = 7;
+            theNote.noteSpeed[1] = 7;
+            theNote.noteSpeed[2] = 7;
+            theNote.noteSpeed[3] = 7;
+            theNote.noteSpeed[4] = 7;
+            theNote.noteSpeed[5] = 7;
+            theNote.noteSpeed[6] = 7;
+            theNote.noteSpeed[7] = 7;
+            NoteData.instance.target_cnt[0] = 1;
+            NoteData.instance.target_cnt[1] = 1;
+            NoteData.instance.target_cnt[2] = 1;
+            NoteData.instance.target_cnt[3] = 1;
+            NoteData.instance.target_cnt[4] = 1;
+            NoteData.instance.target_cnt[5] = 1;
+            NoteData.instance.target_cnt[6] = 1;
+            NoteData.instance.target_cnt[7] = 1;
         }
     }
 
