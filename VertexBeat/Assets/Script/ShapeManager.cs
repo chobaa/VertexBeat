@@ -85,7 +85,7 @@ public class ShapeManager : MonoBehaviour
             target = GameObject.FindGameObjectsWithTag("Triangle_112");
             theNote.noteSpeed[0] = 14;
             theNote.noteSpeed[1] = 14;
-            theNote.noteSpeed[2] = 17;
+            theNote.noteSpeed[2] = 18;
             NoteData.instance.target_cnt[0] = 2;
             NoteData.instance.target_cnt[1] = 2;
             NoteData.instance.target_cnt[2] = 4;
@@ -94,7 +94,7 @@ public class ShapeManager : MonoBehaviour
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_121");
             theNote.noteSpeed[0] = 14;
-            theNote.noteSpeed[1] = 17;
+            theNote.noteSpeed[1] = 18;
             theNote.noteSpeed[2] = 14;
             NoteData.instance.target_cnt[0] = 2;
             NoteData.instance.target_cnt[1] = 4;
@@ -103,7 +103,7 @@ public class ShapeManager : MonoBehaviour
         else if (currentShape == 33)
         {
             target = GameObject.FindGameObjectsWithTag("Triangle_211");
-            theNote.noteSpeed[0] = 17;
+            theNote.noteSpeed[0] = 18;
             theNote.noteSpeed[1] = 14;
             theNote.noteSpeed[2] = 14;
             NoteData.instance.target_cnt[0] = 4;
@@ -115,7 +115,7 @@ public class ShapeManager : MonoBehaviour
             target = GameObject.FindGameObjectsWithTag("Triangle_05152");
             theNote.noteSpeed[0] = 7;
             theNote.noteSpeed[1] = 12;
-            theNote.noteSpeed[2] = 17;
+            theNote.noteSpeed[2] = 18;
             NoteData.instance.target_cnt[0] = 1;
             NoteData.instance.target_cnt[1] = 3;
             NoteData.instance.target_cnt[2] = 4;
@@ -152,6 +152,11 @@ public class ShapeManager : MonoBehaviour
             theNote.noteSpeed[2] = 9;
             theNote.noteSpeed[3] = 14;
             theNote.noteSpeed[4] = 9;
+            NoteData.instance.target_cnt[0] = 2;
+            NoteData.instance.target_cnt[1] = 2;
+            NoteData.instance.target_cnt[2] = 1;
+            NoteData.instance.target_cnt[3] = 2;
+            NoteData.instance.target_cnt[4] = 1;
         }
         else if (currentShape == 61)
         {

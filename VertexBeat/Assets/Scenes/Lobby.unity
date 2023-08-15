@@ -791,6 +791,7 @@ MonoBehaviour:
   bpm: 0
   signature: 0
   offset: 0
+  firstNoteSample: 0
   totalFigureCount: 0
   totalNoteCount: 0
   totalPlayTime: 0
@@ -1113,6 +1114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlaying: 0
   data_load: 0
+  sync_load: 0
 --- !u!114 &1300597154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1262,6 +1264,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9b5aac7d5ddb64d8b1595f3e2c9dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNextNote: 0
+  beatPerSample: 0
+  target_cnt: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1937649987
 GameObject:
   m_ObjectHideFlags: 0
