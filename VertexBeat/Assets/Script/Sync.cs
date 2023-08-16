@@ -28,6 +28,7 @@ public class Sync : MonoBehaviour
             beatPerSecond = stdBPM / (8 * SongData.instance.bpm);
             beatPerSample = oneBeatTime * audioSource.clip.frequency;
             NoteData.instance.beatPerSample = beatPerSample;
+            NoteData.instance.oneBeatTime = oneBeatTime;
             GameManager.instance.sync_load = true;
         }
         SongData.instance.currentPlayTime = audioSource.timeSamples;
