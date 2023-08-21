@@ -2448,7 +2448,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: DOSGothic SDF Material
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - GLOW_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -2495,10 +2496,10 @@ Material:
     - _FaceDilate: 0
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
-    - _GlowInner: 0.05
+    - _GlowInner: 0.5
     - _GlowOffset: 0
-    - _GlowOuter: 0.05
-    - _GlowPower: 0.75
+    - _GlowOuter: 1
+    - _GlowPower: 0.46398604
     - _GradientScale: 6
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0

@@ -22,7 +22,6 @@ public class Sync : MonoBehaviour
         {
             audioSource = GetComponent<AudioSource>();
             stdBPM = 60;
-            audioSource.Play();
             oneBeatTime = (stdBPM / SongData.instance.bpm) * SongData.instance.signature / 2;
             nextSample = oneBeatTime * audioSource.clip.frequency;
             beatPerSecond = stdBPM / (8 * SongData.instance.bpm);
@@ -30,6 +29,7 @@ public class Sync : MonoBehaviour
             NoteData.instance.beatPerSample = beatPerSample;
             NoteData.instance.oneBeatTime = oneBeatTime;
             GameManager.instance.sync_load = true;
+            audioSource.Play();
         }
         SongData.instance.currentPlayTime = audioSource.timeSamples;
         if (GameManager.instance.sync_load && audioSource.timeSamples >= nextSample)

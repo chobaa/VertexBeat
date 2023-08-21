@@ -707,6 +707,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891265890}
+  - component: {fileID: 891265891}
   m_Layer: 5
   m_Name: Lobby
   m_TagString: Untagged
@@ -742,6 +743,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &891265891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891265889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53406def30ec38d4fbbae0b4991c69f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleText: {fileID: 71026162}
+  progressText: {fileID: 1937649989}
+  stageText: {fileID: 937487713}
 --- !u!1 &928343565
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,6 +1282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isNextNote: 0
   beatPerSample: 0
+  oneBeatTime: 0
   target_cnt: 000000000000000000000000000000000000000000000000000000000000000000000000
 --- !u!1 &1937649987
 GameObject:
