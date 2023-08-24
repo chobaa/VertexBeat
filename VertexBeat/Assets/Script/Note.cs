@@ -7,7 +7,6 @@ public class Note : MonoBehaviour
     Sync theSync;
     ShapeManager theShapeManager;
     [SerializeField] public GameObject Cursor = null;
-    public float[] noteSpeed; // 노트의 기본 이동속도
     public int bpm = 1; // 노래의 bpm
     public int cnt = 0;
 
@@ -25,7 +24,6 @@ public class Note : MonoBehaviour
 
     public void NoteMove(GameObject[] target, ref int target_idx, int currentShape, ref bool isPassed, ref bool changeShape)
     {
-        //Cursor.transform.position = Vector2.MoveTowards(Cursor.transform.position, target[target_idx].transform.position, bpm * noteSpeed[target_idx - 1] * Time.deltaTime); // 노트의 움직임은 deltatime
         if (isMoveStart)
         {
             StartCoroutine(Run(NoteData.instance.oneBeatTime * NoteData.instance.target_cnt[target_idx - 1], target, target_idx));
@@ -55,11 +53,6 @@ public class Note : MonoBehaviour
         }
     }
 
-    IEnumerator isDelay()
-    {
-        yield return new WaitForSeconds(0.1f); // 0.1초 동안 distance 측정 x
-    }
-
     IEnumerator Run(double duration, GameObject[] target, int target_idx)
     {
         var runTime = 0.0f;
@@ -73,18 +66,4 @@ public class Note : MonoBehaviour
             yield return null;
         }
     }
-
-    /*float distance = Vector2.Distance(Cursor.transform.position, target[target_idx].transform.position);
-        if (distance < 0.01)
-        {
-            target_idx += 1;
-            StartCoroutine(isDelay());
-            isPassed = true;
-        }
-        if (target_idx == currentShape/10 + 1)
-        {
-            target_idx = 1;
-            changeShape = true;
-            isPassed = true;
-        }*/
 }
